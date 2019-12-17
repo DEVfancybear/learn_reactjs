@@ -13,7 +13,7 @@ class App extends Component {
         { title: "Đi shopping", isComplete: true },
         { title: "Đi siêu thị", isComplete: false },
         { title: "Nấu Cơm", isComplete: false },
-        { title: "Rửa Bát", isComplete: true }
+        { title: "Rửa Bát", isComplete: false }
       ]
     };
     this.onKeyUp = this.onKeyUp.bind(this);

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import PropTypes, { shape, bool } from "prop-types";
 import "./ItemTodo.css";
 import classNames from "classnames";
 import imgCheck from "../img/check.svg";
 import imgCheckDone from "../img/success.svg";
-class ItemTodo extends Component {
+class ItemTodo extends React.Component {
   render() {
     const { item, onClick } = this.props;
     let url = imgCheck;
@@ -22,4 +23,11 @@ class ItemTodo extends Component {
     );
   }
 }
+ItemTodo.propTypes = {
+  item: PropTypes.shape({
+    isComplete: PropTypes.bool.isRequired,
+    title: PropTypes.string.isRequired
+  }),
+  onClick: PropTypes.func.isRequired
+};
 export default ItemTodo;
