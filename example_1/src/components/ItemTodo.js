@@ -1,16 +1,23 @@
 import React, { Component } from "react";
-import './ItemTodo.css';
+import "./ItemTodo.css";
+import classNames from "classnames";
+import imgCheck from "../img/check.svg";
+import imgCheckDone from "../img/success.svg";
 class ItemTodo extends Component {
   render() {
-      const items = this.props.item;
-      let className = 'item_todo';
-      if(items.isComplete) {
-          //thêm class css khi click 
-         className += ' item_done';
-      }
+    const { item, onClick } = this.props;
+    let url = imgCheck;
+    if (item.isComplete) {
+      url = imgCheckDone;
+    }
     return (
-      <div className={className}>
-        <p>{items.title}</p>
+      <div
+        className={classNames("item_todo", {
+          item_done: item.isComplete
+        })}
+      >
+        <img onClick={onClick} src={url} width={32} height={32} />
+        <p>{this.props.item.title}</p>
       </div>
     );
   }

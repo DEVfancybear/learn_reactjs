@@ -3,9 +3,19 @@
   font-weight: 300;
   font-size: 24px;
   color: #4d4d4d;
-  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 5px;
+  display: flex;
 }
-.item_done {
-    text-decoration: line-through;
-    opacity: 0.3;
+.item_todo:last-child {
+  border-bottom: none;
+
+  border-bottom: 1px solid #eee;
+}
+.item_done > p {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+.item_todo > p {
+  margin: 0 0 0 10px;
 }
